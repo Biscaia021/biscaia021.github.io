@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Álgebra Linear Aplicada ao DOM: Uso de DocumentFragment para matriz de renderização (Reduz Reflow)
             const fragment = document.createDocumentFragment();
 
+            const ignoredRepos = ['pokedex', 'https-Biscaia021.github.io'];
+
             repos.forEach(repo => {
-                // Ignora o repositório se for um fork (opcional)
-                // if (repo.fork) return;
+                // Ignora o repositório se for um fork ou se estiver na lista de ignorados
+                if (repo.fork || ignoredRepos.includes(repo.name)) return;
 
                 const article = document.createElement('article');
                 article.className = 'card';
