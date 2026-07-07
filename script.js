@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer para as animações de fade-in dos cards
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observeCards = () => {
         const cards = document.querySelectorAll('.card');
         cards.forEach((card, index) => {
-            // Adiciona um pequeno atraso para efeito de cascata
+            
             card.style.transitionDelay = `${(index % 10) * 0.1}s`;
             observer.observe(card);
         });
