@@ -1,4 +1,4 @@
-// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer para as animações de fade-in dos cards
     const observerOptions = {
@@ -24,15 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Observa os cards estáticos iniciais
+  
     observeCards();
 
-    // Integração Dinâmica com GitHub (biscaia021)
+    
     const githubUsername = 'biscaia021';
     const grid = document.getElementById('projects-grid');
 
     if (grid) {
-        // Caching Quântico (Memoization) usando sessionStorage para reduzir chamadas (Transições de estado otimizadas)
+        
         const cacheKey = `github_repos_${githubUsername}`;
         const cachedData = sessionStorage.getItem(cacheKey);
 
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderRepos(repos) {
             grid.innerHTML = ''; // Limpa estado base
             
-            // Álgebra Linear Aplicada ao DOM: Uso de DocumentFragment para matriz de renderização (Reduz Reflow)
+     
             const fragment = document.createDocumentFragment();
 
             const ignoredRepos = ['pokedex', 'https-Biscaia021.github.io'];
 
             repos.forEach(repo => {
-                // Ignora o repositório se for um fork ou se estiver na lista de ignorados
+  
                 if (repo.fork || ignoredRepos.includes(repo.name)) return;
 
                 const article = document.createElement('article');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fragment.appendChild(article);
             });
             
-            grid.appendChild(fragment); // Emaranhamento: Injeta a árvore processada no DOM principal
+            grid.appendChild(fragment);
             observeCards();
         }
     }
