@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         function renderRepos(repos) {
-            grid.innerHTML = ''; // Limpa estado base
+            grid.innerHTML = ''; 
             
      
             const fragment = document.createDocumentFragment();
