@@ -4,7 +4,7 @@ export function loadGitHubRepos(githubUsername) {
     const grid = document.getElementById('projects-grid');
     if (!grid) return;
 
-    const cacheKey = `github_repos_${githubUsername}`;
+    const cacheKey = `github_repos_v2_${githubUsername}`;
     const cachedData = sessionStorage.getItem(cacheKey);
 
     if (cachedData) {
@@ -24,10 +24,10 @@ function renderRepos(repos, grid) {
     grid.innerHTML = '';
     
     const fragment = document.createDocumentFragment();
-    const ignoredRepos = ['pokedex', 'https-Biscaia021.github.io'];
+    const ignoredRepos = ['pokedex', 'https-biscaia021.github.io', 'biscaia021', 'biscaia021.github.io', 'nlp', 'biometria_facial'];
 
     repos.forEach(repo => {
-        if (repo.fork || ignoredRepos.includes(repo.name)) return;
+        if (repo.fork || ignoredRepos.includes(repo.name.toLowerCase())) return;
 
         const article = document.createElement('article');
         article.className = 'card';
